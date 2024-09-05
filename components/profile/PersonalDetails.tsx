@@ -3,9 +3,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import InputFormField from '../InputFormField'
 import { Form } from '@/components/ui/form'
-import { SelectFormField } from '@/components/SelectFormField'
+
+import InputFormField from '../InputFormField'
+import SelectFormField from '@/components/SelectFormField'
 
 // Define the schema for validation
 const FormSchema = z.object({
@@ -59,7 +60,7 @@ export default function PersonalDetails() {
         />
 
         <SelectFormField
-          name="phone"
+          name="grade"
           control={form.control}
           label="Grade"
           placeholder="11"
@@ -67,7 +68,7 @@ export default function PersonalDetails() {
         />
 
         <SelectFormField
-          name="phone"
+          name="category"
           control={form.control}
           label="Category"
           placeholder="Madni"

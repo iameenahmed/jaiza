@@ -21,7 +21,7 @@ interface SelectFieldProps {
   options: string[]
 }
 
-export function SelectFormField({
+export default function SelectFormField({
   name,
   control,
   label,
