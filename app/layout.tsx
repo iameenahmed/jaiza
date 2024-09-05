@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Sidebar from '@/components/navigation/sidebar'
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -20,8 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <main>{children}</main>
+      <body
+        className={`bg-main-background text-primary-text min-h-screen ${inter.className}`}
+      >
+        <div className="grid md:grid-cols-[14rem_1fr] lg:grid-cols-[16rem_1fr]">
+          <Sidebar />
+          <main className="flex flex-col items-center">{children}</main>
+        </div>
       </body>
     </html>
   )
