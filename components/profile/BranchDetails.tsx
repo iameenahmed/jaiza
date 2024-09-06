@@ -8,15 +8,15 @@ import InputFormField from '../InputFormField'
 import { Form } from '@/components/ui/form'
 
 const formFields = [
-  { name: 'division', label: 'Division', placeholder: 'John Doe' },
-  { name: 'zone', label: 'Zone', placeholder: 'John Smith' },
-  { name: 'branch', label: 'Branch Name', placeholder: '123-456-7890' },
-  { name: 'principle', label: 'Principle', placeholder: 'John Smilga' },
-  { name: 'inspector', label: 'Inspector', placeholder: 'John Doe' },
+  { name: 'division', label: 'Division', placeholder: 'Gujranwala' },
+  { name: 'zone', label: 'Zone', placeholder: 'Sialkot' },
+  { name: 'branch', label: 'Branch Name', placeholder: 'Faizan-e-Madina' },
+  { name: 'principle', label: 'Principle', placeholder: 'Abu Bakr' },
+  { name: 'inspector', label: 'Inspector', placeholder: 'Zaid' },
   {
     name: 'academic_inspector',
     label: 'Academic Inspector',
-    placeholder: 'John Smith',
+    placeholder: 'Khalid',
   },
 ]
 

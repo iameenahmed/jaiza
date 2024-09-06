@@ -9,9 +9,9 @@ import InputFormField from '../InputFormField'
 import SelectFormField from '@/components/SelectFormField'
 
 const inputFields = [
-  { name: 'username', label: 'Name', placeholder: 'John Doe' },
-  { name: 'father_name', label: "Father's Name", placeholder: 'John Smith' },
-  { name: 'phone', label: 'Mobile Number', placeholder: '123-456-7890' },
+  { name: 'username', label: 'Name', placeholder: 'Abdul Rahman' },
+  { name: 'father_name', label: "Father's Name", placeholder: 'Abdullah' },
+  { name: 'phone', label: 'Mobile Number', placeholder: '0300 1234567' },
 ]
 
 const gradeOptions = ['11', '13', '15', '17']
