@@ -14,10 +14,36 @@ Jaiza (Monthly Report Automation System) is a web application designed to replac
 
 ## Tech Stack
 
-- **Frontend**: [Next.js](https://nextjs.org/) - A React framework for server-rendered and statically generated web applications.
-- **UI Components**: [Shadcn](https://shadcn.dev/) - A component library for building fast and customizable interfaces.
-- **Backend & Database**: [Supabase](https://supabase.io/) - An open-source Firebase alternative providing real-time databases, authentication, and storage.
+### Frontend
+
+- **Next.js**: A powerful React framework that supports both server-side rendering and static site generation.
+  - **Routing**: Built-in routing system provided by Next.js.
+  - **API Routes**: Serverless API endpoints directly within the Next.js app.
+  
+- **Shadcn**: A utility-first UI component library built on top of Tailwind CSS.
+  - **Tailwind CSS**: For styling with a focus on utility classes.
+  - **Radix UI**: Accessible and customizable component primitives used by Shadcn.
+  
+- **React Hook Form**: For managing form state and validation.
+- **Zod**: For parsing and validating JSON schema.
+
+### Backend
+
+- **Supabase**: An open-source backend-as-a-service that provides a real-time database and authentication.
+  - **Database**: PostgreSQL-based database with real-time capabilities.
+  - **Authentication**: Handles user authentication and authorization.
+  - **Storage**: For file management and storage.
+
+### Deployment & Hosting
+
+- **Vercel**: For hosting the Next.js application with serverless functions.
+- **Supabase Hosting**: For database and backend services.
+
+### DevOps & Tools
+
+- **ESLint & Prettier**: For code linting and formatting.
+- **Postman**: For testing API endpoints.
 
 ## Contact
 - **Email**: ameenahmed.dev@gmail.com
-- **Github**: iameenahmed
+- **Github**: [iameenahmed](https://github.com/iameenahmed)
