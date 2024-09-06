@@ -21,9 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`bg-main-background text-primary-text min-h-screen ${inter.className}`}
-      >
+      <body className={`min-h-screen ${inter.className}`}>
         <div className="grid md:grid-cols-[14rem_1fr] lg:grid-cols-[16rem_1fr]">
           <Sidebar />
           <main className="flex flex-col items-center">{children}</main>
