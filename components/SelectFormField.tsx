@@ -42,8 +42,10 @@ export default function SelectFormField({
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              {options.map((option) => (
-                <SelectItem value={option}>{option}</SelectItem>
+              {options.map((option, index) => (
+                <SelectItem key={index} value={option}>
+                  {option}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
