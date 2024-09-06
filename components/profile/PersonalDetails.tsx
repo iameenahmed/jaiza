@@ -8,6 +8,12 @@ import { PersonalDetailsSchema, PersonalDetailsTypes } from './schema'
 import InputFormField from '../InputFormField'
 import SelectFormField from '@/components/SelectFormField'
 
+const inputFields = [
+  { name: 'username', label: 'Name', placeholder: 'John Doe' },
+  { name: 'father_name', label: "Father's Name", placeholder: 'John Smith' },
+  { name: 'phone', label: 'Mobile Number', placeholder: '123-456-7890' },
+]
+
 const gradeOptions = ['11', '13', '15', '17']
 const categoryOptions = ['Madni', 'Academic', 'Both']
 
@@ -22,27 +28,16 @@ export default function PersonalDetails() {
 
   return (
     <Form {...form}>
-      <form className="mb-8 grid grid-cols-2 gap-x-24 gap-y-6">
-        <InputFormField
-          name="username"
-          control={form.control}
-          label="Name"
-          placeholder="John Doe"
-        />
-
-        <InputFormField
-          name="father_name"
-          control={form.control}
-          label="Father's Name"
-          placeholder="John Smith"
-        />
-
-        <InputFormField
-          name="phone"
-          control={form.control}
-          label="Mobile Number"
-          placeholder="123-456-7890"
-        />
+      <form className="mb-4 grid gap-y-6 lg:grid-cols-2 lg:gap-x-24">
+        {inputFields.map((field) => (
+          <InputFormField
+            key={field.name}
+            name={field.name}
+            control={form.control}
+            label={field.label}
+            placeholder={field.placeholder}
+          />
+        ))}
 
         <SelectFormField
           name="grade"
