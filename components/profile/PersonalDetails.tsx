@@ -2,33 +2,18 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { Form } from '@/components/ui/form'
+import { PersonalDetailsSchema, PersonalDetailsTypes } from './schema'
 
 import InputFormField from '../InputFormField'
 import SelectFormField from '@/components/SelectFormField'
-
-// Define the schema for validation
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
-  }),
-  father_name: z.string().min(2, {
-    message: "Father's name must be at least 2 characters.",
-  }),
-  phone: z.string().min(10, {
-    message: 'Phone number must be at least 10 digits.',
-  }),
-  grade: z.string(),
-  category: z.string(),
-})
 
 const gradeOptions = ['11', '13', '15', '17']
 const categoryOptions = ['Madni', 'Academic', 'Both']
 
 export default function PersonalDetails() {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<PersonalDetailsTypes>({
+    resolver: zodResolver(PersonalDetailsSchema),
     defaultValues: {
       grade: '11',
       category: 'Madni',
