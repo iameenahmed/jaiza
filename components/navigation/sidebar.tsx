@@ -7,8 +7,8 @@ import Navlinks from './navlinks'
 export default function Sidebar() {
   return (
     <div>
-      <div className="hidden border-r bg-muted/40 md:block">
-        <div className="flex h-full min-h-screen flex-col gap-2">
+      <aside className="fixed hidden h-full w-[14rem] border-r bg-muted/40 md:block lg:w-[16rem]">
+        <div className="flex min-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <span className="">jaiza</span>
@@ -25,16 +25,12 @@ export default function Sidebar() {
             </Button>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col">
+      </aside>
+      <div className="flex flex-col md:hidden">
         <header className="flex h-14 items-center gap-4 border-2 bg-muted/40 px-4 lg:h-0 lg:px-0">
           <Sheet>
             <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="shrink-0 md:hidden"
-              >
+              <Button variant="outline" size="icon" className="shrink-0">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
