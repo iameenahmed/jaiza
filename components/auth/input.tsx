@@ -1,10 +1,10 @@
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/utils'
 
 export function Input({ ...props }: React.JSX.IntrinsicElements['input']) {
   return (
     <input
       className={cn(
-        'rounded-md h-8 text-sm px-4 py-5 bg-inherit border',
+        'h-8 rounded-md border bg-inherit px-4 py-5 text-sm',
         props.className
       )}
       {...props}
