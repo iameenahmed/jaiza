@@ -15,9 +15,8 @@ export default function AddNewBook() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="w-56">
-          <Plus className="me-2 h-5 w-5" />
-          Add New Book
+        <Button variant="ghost" size="icon">
+          <Plus aria-label="add new book" />
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[26rem] md:max-w-[36rem] lg:max-w-[40rem]">
