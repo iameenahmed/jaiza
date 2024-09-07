@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Save } from 'lucide-react'
 
 interface FormCardProps {
   title: string
@@ -28,7 +29,10 @@ export default function FormCard({
         </CardHeader>
         <CardContent>{children}</CardContent>
         <CardFooter className="border-t px-6 py-4">
-          <Button>Save</Button>
+          <Button>
+            <Save className="me-2 h-4 w-4" />
+            Save
+          </Button>
         </CardFooter>
       </Card>
     </div>
