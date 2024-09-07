@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { Plus, LibraryBig } from 'lucide-react'
+import { LibraryBig } from 'lucide-react'
+import AddNewBook from './AddNewBook'
 
 export default function Empty() {
   return (
@@ -7,10 +7,7 @@ export default function Empty() {
       <LibraryBig className="mb-4 h-12 w-12" />
       <h1 className="mb-1 text-xl font-medium">Your list is empty!</h1>
       <p className="mb-2 text-muted-foreground">Click + button to add books </p>
-      <Button className="px-12">
-        <Plus className="me-2 h-5 w-5" />
-        Add New Book
-      </Button>
+      <AddNewBook />
     </div>
   )
 }
