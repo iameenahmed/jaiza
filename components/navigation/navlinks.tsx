@@ -6,7 +6,6 @@ import {
   NotebookPen,
   ChartLine,
   ShieldCheck,
-  Settings,
 } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -18,7 +17,6 @@ const links = [
   { href: '/progress', icon: NotebookPen, label: 'Progress' },
   { href: '/reports', icon: ChartLine, label: 'Reports' },
   { href: '/admin', icon: ShieldCheck, label: 'Admin' },
-  { href: '/settings', icon: Settings, label: 'Settings' },
 ]
 
 export default function Navlinks() {
