@@ -31,7 +31,7 @@ interface BookCardProps {
   books: Book[]
 }
 
-export default function BookCard({ books }: BookCardProps) {
+export default function BooksTable({ books }: BookCardProps) {
   return (
     <div>
       <Card>
