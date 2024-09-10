@@ -53,7 +53,7 @@ export default function BranchDetails() {
             />
           ))}
         </div>
-        <Button type="submit">
+        <Button type="submit" className="mt-8">
           <Save className="me-2 h-4 w-4" />
           Save
         </Button>
