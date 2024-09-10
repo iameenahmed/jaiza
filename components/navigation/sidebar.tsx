@@ -7,15 +7,15 @@ import Navlinks from './navlinks'
 export default function Sidebar() {
   return (
     <div>
-      <aside className="fixed hidden h-full w-[14rem] border-r bg-muted/40 md:block lg:w-[16rem]">
+      <aside className="fixed hidden h-full w-[14rem] rounded-r-2xl bg-muted md:block lg:w-[16rem]">
         <div className="flex min-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <span className="">jaiza</span>
             </Link>
           </div>
-          <div className="flex-1">
-            <nav className="grid items-start gap-y-1 px-2 font-medium lg:px-4">
+          <div className="mt-8 flex-1">
+            <nav className="grid items-start gap-y-2 px-2 font-medium lg:px-4">
               <Navlinks />
             </nav>
           </div>
