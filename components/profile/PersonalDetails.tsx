@@ -7,6 +7,8 @@ import { PersonalDetailsSchema, PersonalDetailsTypes } from './schema'
 
 import InputFormField from '../InputFormField'
 import SelectFormField from '@/components/SelectFormField'
+import { Button } from '../ui/button'
+import { Save } from 'lucide-react'
 
 const inputFields = [
   { name: 'username', label: 'Name', placeholder: 'Abdul Rahman' },
@@ -17,10 +19,17 @@ const inputFields = [
 const gradeOptions = ['11', '13', '15', '17']
 const categoryOptions = ['Madni', 'Academic', 'Both']
 
+function onSubmit(values: PersonalDetailsTypes) {
+  console.log(values)
+}
+
 export default function PersonalDetails() {
   const form = useForm<PersonalDetailsTypes>({
     resolver: zodResolver(PersonalDetailsSchema),
     defaultValues: {
+      username: '',
+      father_name: '',
+      phone: '',
       grade: '11',
       category: 'Madni',
     },
@@ -28,32 +37,38 @@ export default function PersonalDetails() {
 
   return (
     <Form {...form}>
-      <form className="mb-4 grid gap-y-6 lg:grid-cols-2 lg:gap-x-24">
-        {inputFields.map((field) => (
-          <InputFormField
-            key={field.name}
-            name={field.name}
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="mb-4 grid gap-y-6 lg:grid-cols-2 lg:gap-x-24">
+          {inputFields.map((field) => (
+            <InputFormField
+              key={field.name}
+              name={field.name}
+              control={form.control}
+              label={field.label}
+              placeholder={field.placeholder}
+            />
+          ))}
+
+          <SelectFormField
+            name="grade"
             control={form.control}
-            label={field.label}
-            placeholder={field.placeholder}
+            label="Grade"
+            placeholder="11"
+            options={gradeOptions}
           />
-        ))}
 
-        <SelectFormField
-          name="grade"
-          control={form.control}
-          label="Grade"
-          placeholder="11"
-          options={gradeOptions}
-        />
-
-        <SelectFormField
-          name="category"
-          control={form.control}
-          label="Category"
-          placeholder="Madni"
-          options={categoryOptions}
-        />
+          <SelectFormField
+            name="category"
+            control={form.control}
+            label="Category"
+            placeholder="Madni"
+            options={categoryOptions}
+          />
+        </div>
+        <Button type="submit">
+          <Save className="me-2 h-4 w-4" />
+          Save
+        </Button>
       </form>
     </Form>
   )

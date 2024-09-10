@@ -1,4 +1,10 @@
-import FormCard from '@/components/FormCard'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import PersonalDetails from '../../components/profile/PersonalDetails'
 import BranchDetails from '../../components/profile/BranchDetails'
 
@@ -8,13 +14,28 @@ const Profile = () => {
       <div className="mx-auto grid w-full max-w-6xl gap-2">
         <h1 className="text-3xl font-semibold">Profile</h1>
       </div>
-      <FormCard title="Personal Details" description="Used to identify">
-        <PersonalDetails />
-      </FormCard>
-
-      <FormCard title="Branch Details" description="Used to identify">
-        <BranchDetails />
-      </FormCard>
+      <div className="grid gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Personal Details</CardTitle>
+            <CardDescription>Used to identify.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <PersonalDetails />
+          </CardContent>
+        </Card>
+      </div>
+      <div className="grid gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Branch Details</CardTitle>
+            <CardDescription>Used to identify.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <BranchDetails />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

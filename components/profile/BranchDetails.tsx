@@ -6,6 +6,8 @@ import { BranchDetailsSchema, BranchDetailsTypes } from './schema'
 
 import InputFormField from '../InputFormField'
 import { Form } from '@/components/ui/form'
+import { Button } from '../ui/button'
+import { Save } from 'lucide-react'
 
 const formFields = [
   { name: 'division', label: 'Division', placeholder: 'Gujranwala' },
@@ -20,23 +22,41 @@ const formFields = [
   },
 ]
 
+function onSubmit(values: BranchDetailsTypes) {
+  console.log(values)
+}
+
 export default function BranchDetails() {
   const form = useForm<BranchDetailsTypes>({
     resolver: zodResolver(BranchDetailsSchema),
+    defaultValues: {
+      division: '',
+      zone: '',
+      branch: '',
+      principle: '',
+      inspector: '',
+      academic_inspector: '',
+    },
   })
 
   return (
     <Form {...form}>
-      <form className="mb-4 grid gap-y-4 lg:grid-cols-2 lg:gap-x-24">
-        {formFields.map((field) => (
-          <InputFormField
-            key={field.name}
-            name={field.name}
-            control={form.control}
-            label={field.label}
-            placeholder={field.placeholder}
-          />
-        ))}
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="mb-4 grid gap-y-4 lg:grid-cols-2 lg:gap-x-20">
+          {formFields.map((field) => (
+            <InputFormField
+              key={field.name}
+              name={field.name}
+              control={form.control}
+              label={field.label}
+              placeholder={field.placeholder}
+            />
+          ))}
+        </div>
+        <Button type="submit">
+          <Save className="me-2 h-4 w-4" />
+          Save
+        </Button>
       </form>
     </Form>
   )

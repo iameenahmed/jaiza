@@ -1,4 +1,10 @@
-import FormCard from '@/components/FormCard'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import ProgressDetails from '@/components/progress/ProgressDetails'
 
 export default function ProgressPage() {
@@ -7,12 +13,17 @@ export default function ProgressPage() {
       <div className="mx-auto grid w-full max-w-6xl gap-2">
         <h1 className="text-3xl font-semibold">Progress</h1>
       </div>
-      <FormCard
-        title="Progress Details"
-        description="Used to make your monthly report"
-      >
-        <ProgressDetails />
-      </FormCard>
+      <div className="grid gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Progress</CardTitle>
+            <CardDescription>Used to make your monthly report.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ProgressDetails />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }
