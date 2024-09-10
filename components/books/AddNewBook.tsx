@@ -3,13 +3,12 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
 import BookDetails from './BookDetails'
-import { Save, Plus } from 'lucide-react'
+import { Plus } from 'lucide-react'
 
 export default function AddNewBook() {
   return (
@@ -27,12 +26,6 @@ export default function AddNewBook() {
           </DialogDescription>
         </DialogHeader>
         <BookDetails />
-        <DialogFooter>
-          <Button type="submit">
-            <Save className="me-2 h-4 w-4" />
-            Save changes
-          </Button>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   )
