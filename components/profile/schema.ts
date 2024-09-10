@@ -1,5 +1,19 @@
 import { z } from 'zod'
 
+export const PersonalDetailsSchema = z.object({
+  username: z.string().min(2, {
+    message: 'Username must be at least 2 characters.',
+  }),
+  father_name: z.string().min(2, {
+    message: "Father's name must be at least 2 characters.",
+  }),
+  phone: z.string().length(10, {
+    message: 'Phone number must be 11 digits.',
+  }),
+  grade: z.string(),
+  category: z.string(),
+})
+
 export const BranchDetailsSchema = z.object({
   division: z.string().min(4, {
     message: 'Must be at least 2 characters.',
@@ -19,20 +33,6 @@ export const BranchDetailsSchema = z.object({
   academic_inspector: z.string().min(4, {
     message: 'Must be at least 4 characters.',
   }),
-})
-
-export const PersonalDetailsSchema = z.object({
-  username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
-  }),
-  father_name: z.string().min(2, {
-    message: "Father's name must be at least 2 characters.",
-  }),
-  phone: z.string().min(10, {
-    message: 'Phone number must be at least 10 digits.',
-  }),
-  grade: z.string(),
-  category: z.string(),
 })
 
 export type BranchDetailsTypes = z.infer<typeof BranchDetailsSchema>
